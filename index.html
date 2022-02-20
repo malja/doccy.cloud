@@ -3182,6 +3182,8 @@
             .then(response => response.json())
             .then(data => {
 
+              let now = Date.now()
+
               let record = {
                 "fingerprint": result.visitorId,
                 "ip_address": data.ipAddress,
@@ -3189,7 +3191,7 @@
                 "country": data.countryName,
                 "continent": data.continentName,
                 "page": url,
-                "datetime": Date.now().toISOString()
+                "datetime": `${String(now.getMonth()).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}-${now.getFullYear()} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`
               }
 
               let settings = {
