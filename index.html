@@ -3177,7 +3177,6 @@
         fpPromise
           .then(fp => fp.get())
           .then(result => {
-            console.log(result.visitorId)
             fetch('https://api.db-ip.com/v2/free/self')
             .then(response => response.json())
             .then(data => {
